@@ -7,7 +7,7 @@ with fechas as (
         '2030-12-31'::date,
         '1 day'::interval
     )::date as full_date
-)
+),
 
 calendario as (
     select
