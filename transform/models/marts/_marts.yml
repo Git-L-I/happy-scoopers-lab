@@ -10,7 +10,7 @@ models:
         description: "Llave unica de la fecha (YYYYMMDD). -1 = desconocido."
         data_tests:
           - unique
-          - not null
+          - not_null
       - name: day_type
         description: "'Entre semana' | 'Fin de semana' | 'N/A'."
         data_tests:
