@@ -4,20 +4,21 @@ with p  as ( select * from {{ ref('stg_oltp_products') }} ),
     sub as ( select * from {{ ref('stg_oltp_product_subcategories') }} ),
     cat as ( select * from {{ ref('stg_oltp_product_categories') }} ),
     dep as ( select * from {{ ref('stg_oltp_product_departments') }} ),
-    uom as ( select * from {{ ref('stg_oltp_units_of_measure') }} ),
+    uom as ( select * from {{ ref('stg_oltp_units_of_measure') }} )
 
 joined as (
     select
+    
         p.product_id, p.product_name, p.product_code, p.product_description,
         p.unit_price, p.is_discontinued,
         coalesce(uom.unit_of_measure_code, 'N/A') as unit_of_measure_code,
         coalesce(uom.unit_of_measure_name, 'N/A') as unit_of_measure_name,
         coalesce(sub.subcategory_name,     'N/A') as subcategory_name,
         coalesce(cat.category_name,        'N/A') as category_name,
-        coalesce(dep.department_name,      'N/A') as department_name,
+        coalesce(dep.department_name,      'N/A') as department_name
     
     from p
-    
+
     left join sub on p.subcategory_id        = sub.product_subcategory_id
     left join cat on sub.product_category_id = cat.category_id
     left join dep on cat.department_id       = dep.department_id
