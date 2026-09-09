@@ -14,8 +14,10 @@ joined as (
         coalesce(uom.unit_of_measure_name, 'N/A') as unit_of_measure_name,
         coalesce(sub.subcategory_name,     'N/A') as subcategory_name,
         coalesce(cat.category_name,        'N/A') as category_name,
-        coalesce(dep.department_name,      'N/A') as department_name
+        coalesce(dep.department_name,      'N/A') as department_name,
+    
     from p
+    
     left join sub on p.subcategory_id        = sub.product_subcategory_id
     left join cat on sub.product_category_id = cat.category_id
     left join dep on cat.department_id       = dep.department_id
