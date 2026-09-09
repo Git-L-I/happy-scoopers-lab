@@ -4,7 +4,7 @@ with p  as ( select * from {{ ref('stg_oltp_products') }} ),
     sub as ( select * from {{ ref('stg_oltp_product_subcategories') }} ),
     cat as ( select * from {{ ref('stg_oltp_product_categories') }} ),
     dep as ( select * from {{ ref('stg_oltp_product_departments') }} ),
-    uom as ( select * from {{ ref('stg_oltp_units_of_measure') }} )
+    uom as ( select * from {{ ref('stg_oltp_units_of_measure') }} ),
 
 joined as (
     select
