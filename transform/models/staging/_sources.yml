@@ -13,4 +13,4 @@ sources:
       - name: cities
       - name: provinces
       - name: countries
-      
+      - name: customers
