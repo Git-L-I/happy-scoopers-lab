@@ -47,7 +47,8 @@ DESTINATIONS = {
 # reciben datos, viajarán solos)
 TABLES = [
     "products","product_departments","product_categories","product_subcategories",
-    "units_of_measure", "employees","addresses","cities","provinces","countries"
+    "units_of_measure", "employees","addresses","cities","provinces","countries",
+    "customers"
 ]
 
 
