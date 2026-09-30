@@ -6,7 +6,7 @@
 # (Así `make` funciona en cualquier terminal, activada o no.)
 .PHONY: labs-pdf workspace venv up reset el-full el simulate dbt-deps dbt-build dbt-fresh \
         dbt-docs dbt-snapshot cycle cycle-full orchestrate dagster-ui \
-        bi-grants web-up cloud-up cloud-urls cloud-down guide-pdf
+        bi-grants web-up cloud-up cloud-urls cloud-down guide-pdf restoredlt
 # OJO: transform/dbt_packages NO va aquí — ese sí es un target de archivo real
 # (queremos que Make lo salte si la carpeta ya existe).
 
@@ -34,6 +34,9 @@ reset:         ## Destruir todo y reinicializar desde cero
 # Fase 1: extracción y carga (EL)
 el-full:       ## Carga completa oltp -> dwh.raw (borra estado incremental)
 	$(PY) el/pipeline.py --full
+
+restoredlt:
+	$(PY) dlt pipeline happy_scoopers_el_postgres abort-packages
 
 el:            ## Carga incremental (solo filas con modified_date nuevo)
 	$(PY) el/pipeline.py

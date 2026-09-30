@@ -46,7 +46,8 @@ DESTINATIONS = {
 # vienen vacías en el repo original; las incluimos igual: si algún día
 # reciben datos, viajarán solos)
 TABLES = [
-"product_departments","units_of_measure","product_categories","product_subcategories","products"
+    "products","product_departments","product_categories","product_subcategories",
+    "units_of_measure", "employees","addresses","cities","provinces","countries"
 ]
 
 
@@ -81,7 +82,7 @@ def main():
 
     load_info = pipeline.run(
         build_source(),
-        refresh="drop_sources" if args.full else None,
+        refresh="drop_data" if args.full else None,
     )
 
     # Resumen: cuántas filas viajaron por tabla en ESTA ejecución
