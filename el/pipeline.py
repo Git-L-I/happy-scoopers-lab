@@ -46,9 +46,10 @@ DESTINATIONS = {
 # vienen vacías en el repo original; las incluimos igual: si algún día
 # reciben datos, viajarán solos)
 TABLES = [
-    "products","product_departments","product_categories","product_subcategories",
-    "units_of_measure", "employees","addresses","cities","provinces","countries",
-    "customers"
+   #  "products","product_departments","product_categories","product_subcategories",
+   #  "units_of_measure", "employees","addresses","cities","provinces","countries",
+   #  "customers"
+      "payment_types", "promotions"
 ]
 
 
