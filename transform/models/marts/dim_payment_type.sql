@@ -13,4 +13,4 @@ unknown_member as (
 
 select * from final
 union all
-select * from unknown member
+select * from unknown_member
