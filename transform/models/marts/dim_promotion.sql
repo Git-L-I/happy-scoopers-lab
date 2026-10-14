@@ -10,7 +10,7 @@ from p
 unknown_member as (
     select '-1' as promotion_key, -1 as promotion_id, 'N/A' as deal_description,
             null::date as start_date, null::date as end_date,
-            null:numeric as discount_amount, null::numeric as discount_percentage
+            null::numeric as discount_amount, null::numeric as discount_percentage
 )
 
 select * from final
