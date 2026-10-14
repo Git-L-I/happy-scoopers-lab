@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with pt as ( select * from {{ ref('stg_oltp_payment_types') }} ),
+with pt as ( select * from {{ ref('stg_oltp__payment_types') }} ),
 
 final as (
     select {{ dbt_utils.generate_surrogate_key(['payment_type_id']) }} as payment_type_key,
