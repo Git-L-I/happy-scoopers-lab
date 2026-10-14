@@ -15,3 +15,4 @@ sources:
       - name: countries
       - name: customers
       - name: payment_types
+      - name: promotions
